@@ -92,7 +92,7 @@ CGenProcess::CGenProcess( const SCGenParams& params )
 
     m_best = new CIndivid( m_params.indSize );
 
-    srand( unsigned int( time(0) ) );
+    srand( ( unsigned int )( time(0) ) );
 }
 
 //-----------------------------------------------------------
