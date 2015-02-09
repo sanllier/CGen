@@ -13,7 +13,7 @@ CIndivid::CIndivid( long long size )
     : m_state(0)
 {
     resize( size );
-    memset( m_state, 0, size );
+    memset( m_state, 0, size_t( size ) );
 }
 
 //------------------------------------------------------------
@@ -38,7 +38,7 @@ void CIndivid::resize( long long newSize )
         delete[] m_state;
 
     m_size = newSize;
-    m_state = new bool[ newSize ];
+    m_state = new bool[ size_t( newSize ) ];
 }
 
 //------------------------------------------------------------
@@ -82,7 +82,7 @@ void CIndivid::generate( const CProbVec& probVec )
 CIndivid& CIndivid::operator=( const CIndivid& rInd )
 {
     resize( rInd.m_size );
-    memcpy( m_state, rInd.m_state, m_size );
+    memcpy( m_state, rInd.m_state, size_t( m_size ) );
     m_fitness = rInd.m_fitness;
     return *this;
 }

@@ -92,7 +92,7 @@ CGenProcess::CGenProcess( const SCGenParams& params )
 
     m_best = new CIndivid( m_params.indSize );
 
-    srand( time(0) );
+    srand( unsigned int( time(0) ) );
 }
 
 //-----------------------------------------------------------
@@ -117,7 +117,7 @@ double CGenProcess::process()
     if ( m_params.individsNum < 1 )
         throw std::string( "CGenProcess trying to process with too small number of individs(must be >=1). " ).append( __FUNCTION__ ); 
 
-    double startTime = time(0);
+    double startTime = double( time(0) );
     std::vector< CProbVec* > probVecPull( m_params.indSize );
     std::vector< CIndivid* > indsPull( m_params.indSize );
     for ( int i = 0; i < m_params.individsNum; ++i )
