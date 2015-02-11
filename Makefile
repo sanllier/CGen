@@ -4,7 +4,7 @@ OBJECTS = obj/cgen.o obj/cindivid.o \
           obj/cprobvec.o obj/pugixml.o \
           obj/mtrand.o
 DFLAG =
-CFLAG = -std=c++11 -Iinclude/ -O3
+CFLAG = -Iinclude/ -O3
 CC    = icpc
 
 cgen: $(OBJECTS)
