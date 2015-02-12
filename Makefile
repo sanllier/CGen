@@ -5,7 +5,7 @@ OBJECTS = obj/cgen.o obj/cindivid.o \
           obj/mtrand.o
 DFLAG =
 CFLAG = -Iinclude/ -O3
-CC    = icpc
+CC    = g++
 
 cgen: $(OBJECTS)
 	@mkdir -p lib
